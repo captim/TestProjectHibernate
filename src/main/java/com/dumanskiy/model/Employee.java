@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "emp_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_sequence")
     @SequenceGenerator(name = "employee_sequence", sequenceName = "EMPLOYEE_SEQ")
     private int id;
 
@@ -85,5 +85,17 @@ public class Employee {
 
     public void setManager(Employee manager) {
         this.manager = manager;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", department=" + department +
+                ", manager=" + manager +
+                '}';
     }
 }
